@@ -8,5 +8,4 @@ movieRouter.get('/movie', moviesController.getAllMovies);
 movieRouter.post('/movie/new', moviesController.addMovie);
 movieRouter.put('/movie/update', moviesController.updateMovie);
 movieRouter.delete('/movie/:movieID', moviesController.deleteMovie);
-
 module.exports = { movieRouter };

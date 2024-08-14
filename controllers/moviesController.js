@@ -54,7 +54,8 @@ exports.moviesController = {
 		try {
 			await connection.execute('insert into tbl_13_movies (name, director, year, description) values(?,?,?,?)', 
                 [movie_name, movie_director, movie_year,movie_desc]);
-			res.status(200).send();
+            const newID = await connection.query('select MAX(id) as id from tbl_13_movies');
+			res.status(200).send(newID[0][0]);
 		} catch (err) {
 			res.status(500).send(err);
 		}
