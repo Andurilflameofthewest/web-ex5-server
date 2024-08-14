@@ -46,7 +46,7 @@ exports.moviesController = {
         const movie_desc = req.body.description;
 
         if (!movie_name || !movie_director || !movie_year|| !movie_desc) {
-            res.status(400).send('Invalid something');
+            res.status(400).send('Invalid input');
 			await connection.end();
 			return;
         }
